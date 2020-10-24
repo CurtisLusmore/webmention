@@ -1,13 +1,20 @@
 {
   "bindings": [
     {
-      "authLevel": "function",
+      "authLevel": "anonymous",
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
       "methods": [
         "post"
       ]
+    },
+    {
+      "tableName": "Webmentions",
+      "connection": "AzureWebJobsStorage",
+      "name": "tableBinding",
+      "type": "table",
+      "direction": "out"
     },
     {
       "type": "http",
