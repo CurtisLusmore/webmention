@@ -1,0 +1,52 @@
+:root {
+  --color-black: #202020;
+  --color-white: #ffffff;
+  --color-accent-1: #0080ff;
+  --color-accent-2: #ff4040;
+  --color-text: var(--color-black);
+  --color-background: var(--color-white);
+  --font-head: 'Lora', serif;
+  --font-body: 'Scope One', serif;
+  --font-code: 'Inconsolata', monospace;
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('/fonts/Lora-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Scope One';
+  src: url('/fonts/ScopeOne-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  src: url('/fonts/Inconsolata-Regular.ttf') format('truetype');
+}
+
+body, input {
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+h1, h2 { font-family: var(--font-head); }
+code, pre { font-family: var(--font-code); }
+
+h1 { font-size: 1.5em; }
+h2 { font-size: 1.2em; }
+pre { font-size: 0.8em; }
+input { font-size: 1em; margin: 10px auto; }
+
+a { color: var(--color-text); text-decoration-color: var(--color-accent-1); }
+a:hover { text-decoration-color: var(--color-accent-2); }
+
+form > input:not([type="submit"]), label {
+  display: block;
+  width: 100%;
+}
+
+form > input:not([type="submit"]) {
+  outline: 0;
+  border-width: 0 0 1px 0;
+}

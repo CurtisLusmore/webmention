@@ -1,0 +1,10 @@
+body > header { grid-area: header; }
+body > main { grid-area: main; }
+
+@media screen and (min-width: 901px) {
+  body {
+    max-width: 800px;
+    margin: auto;
+    font-size: 1.5em;
+  }
+}

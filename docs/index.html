@@ -1,0 +1,52 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webmention | lusmo.re</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="webmention" href="https://webmention.lusmo.re/post">
+  <script src="./js/main.js" defer></script>
+</head>
+
+<body>
+<header>
+  <h1>Webmention</h1>
+</header>
+<main>
+  <p>
+    Have you written a response to one of my posts? Then create a Webmention by
+    submitting the below form, sending a <code>POST</code> request to
+    <a href="https://webmention.lusmo.re/post"
+    >https://webmention.lusmo.re/post</a> (like below), or using publishing
+    software that supports <a href="https://indieweb.org/Webmention"
+    >Webmentions</a>.
+  </p>
+  <pre>
+curl --request POST 'https://webmention.lusmo.re/post' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'source=https://your.blog/post' \
+--data-urlencode 'target=https://lusmo.re/webmention'
+</pre>
+  <form onsubmit="return post(event);">
+      <h2>Create a Webmention</h2>
+      <label for="source">Source</label>
+      <input type="url" name="source" required placeholder="https://your.blog/post">
+      <label for="target">Target</label>
+      <input type="url" name="target" required placeholder="https://lusmo.re/webmention">
+      <input type="submit" value="Create">
+      <p class="success"></p>
+      <p class="error"></p>
+  </form>
+  <form onsubmit="return get(event);">
+      <h2>Check Webmentions</h2>
+      <label for="target">Target</label>
+      <input type="url" name="target" required placeholder="https://lusmo.re/webmention">
+      <input type="submit" value="Get">
+      <ul class="success"></ul>
+      <p class="error"></p>
+  </form>
+</main>
+</body>
+
+</html>
